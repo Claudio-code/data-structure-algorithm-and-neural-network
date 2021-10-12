@@ -2,4 +2,6 @@
 
 require_once "../vendor/autoload.php";
 
-echo "ok";
+use \Claudiosilvajunior\Php\Stack\StackRun;
+
+StackRun::run();
