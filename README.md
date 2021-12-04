@@ -3,7 +3,6 @@
 </h3>
 
 [Stack](#stack)
-
 [Queue](#queue)
 
 
