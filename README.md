@@ -2,8 +2,8 @@
   :blue_heart: Data struture, algorithm and network :blue_heart:
 </h3>
 
-[Stack](#stack)
-[Queue](#queue)
+- [Stack](#stack)
+- [Queue](#queue)
 
 
 <hr>
