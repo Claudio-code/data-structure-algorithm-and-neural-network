@@ -4,6 +4,8 @@
 
 - [Stack](#stack)
 - [Queue](#queue)
+- [Deck](#deck)
+
 
 
 <hr>
@@ -19,5 +21,12 @@
 ## Queue
 
 - Queue is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at its ends. One end is always used to insert data (enqueue) and the is used to remove data (dequeue). Queue follows `First-In-First-Out` methodology. 
+
+<hr>
+
+<a id="deck"></a>
+## Deck
+
+- Deck is an irregular acronym of double-ended queue. Double-ended queues are sequence containers with dynamic sizes that can be expanded or contrated on both ends.
 
 <hr>
