@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.deck.DeckRun;
+import org.example.linkedList.LinkedListRun;
 import org.example.queue.QueueRun;
 import org.example.stack.StackRun;
 
@@ -9,5 +10,6 @@ public class Main {
         DeckRun.run();
         StackRun.run();
         QueueRun.run();
+        LinkedListRun.run();
     }
 }
