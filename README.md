@@ -5,6 +5,7 @@
 - [Stack](#stack)
 - [Queue](#queue)
 - [Deck](#deck)
+- [LinkedList](#linked-list)
 
 
 
@@ -27,6 +28,13 @@
 <a id="deck"></a>
 ## Deck
 
-- Deck is an irregular acronym of double-ended queue. Double-ended queues are sequence containers with dynamic sizes that can be expanded or contrated on both ends.
+- Deck is an irregular acronym of double-ended queue. Double-ended queues are sequence containers with dynamic sizes that can be expanded or contrasted on both ends.
+
+<hr>
+
+<a id="linked-list"></a>
+## Linked List
+
+- A linked list or a current list is a dynamic, linear data structure. It is composed of several cells that are interconnected through pointers, that is, each cell has a pointer that points to the memory address of the next cell.
 
 <hr>
