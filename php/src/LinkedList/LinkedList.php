@@ -13,19 +13,14 @@ class LinkedList
         return $position >= 0 && $position < $this->size;
     }
 
-    public function hasFirst(): bool
-    {
-        return $this->first !== null;
-    }
-
-    public function hasLast(): bool
-    {
-        return $this->last !== null;
-    }
-
     public function length(): int
     {
         return $this->size;
+    }
+
+    public function nextIsEmpty(): bool
+    {
+        return empty($this->first?->getNext());
     }
 
     public function empty(): bool
@@ -89,35 +84,69 @@ class LinkedList
          return $actual;
      }
 
-     public function pushByPosition(int $position, string $element): void
+    public function pushByPosition(int $position, string $element): void
+    {
+        if ($this->empty()) {
+            $this->pushEmpty($element);
+            return;
+        }
+        if ($position === $this->size || $position > $this->size) {
+            $this->pushBack($element);
+            return;
+        }
+        if ($position <= 0) {
+            $this->pushFront($element);
+            return;
+        }
+        $nodeToInsert = new Node();
+        $nodeToInsert->setElement($element);
+        $previousNode = $this->first;
+        $currentNode = $this->first->getNext();
+        $currentPosition = 1;
+        while ($currentNode != null) {
+            if ($currentPosition == $position) {
+                $nodeToInsert->setNext($currentNode);
+                $previousNode->setNext($nodeToInsert);
+            }
+            $previousNode = $currentNode;
+            $currentNode = $currentNode?->getNext();
+            $currentPosition++;
+
+        }
+        $this->size++;
+    }
+
+     public function popFirst(): void
      {
-         if ($this->empty()) {
-             $this->pushEmpty($element);
+        if ($this->nextIsEmpty()) {
+            $this->first = null;
+            $this->last = null;
+            $this->size--;
+            return;
+        }
+        $this->first = $this->first->getNext();
+        $this->size--;
+     }
+
+     public function popByPosition(int $position): void
+     {
+         if ($position == 0 || $this->nextIsEmpty()) {
+             $this->popFirst();
              return;
          }
-         if ($position === $this->size || $position > $this->size) {
-             $this->pushBack($element);
-             return;
-         }
-         if ($position <= 0) {
-             $this->pushFront($element);
-             return;
-         }
-         $nodeToInsert = new Node();
-         $nodeToInsert->setElement($element);
          $previousNode = $this->first;
-         $currentNode = $this->first->getNext();
+         $currentNode = $this->first?->getNext();
          $currentPosition = 1;
          while ($currentNode != null) {
              if ($currentPosition == $position) {
-                 $nodeToInsert->setNext($currentNode);
-                 $previousNode->setNext($nodeToInsert);
+                 $previousNode->setNext($currentNode->getNext());
+                 $currentNode->setNext(null);
+                 break;
              }
              $previousNode = $currentNode;
              $currentNode = $currentNode?->getNext();
              $currentPosition++;
-
          }
-         $this->size++;
+         $this->size--;
      }
 }

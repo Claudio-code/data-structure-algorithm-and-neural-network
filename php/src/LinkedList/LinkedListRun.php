@@ -13,5 +13,8 @@ class LinkedListRun
         $linkedList->pushFront('Marcos 3');
         $linkedList->pushByPosition(1, 'Maria');
         $linkedList->show();
+        $linkedList->popFirst();
+        $linkedList->popByPosition(2);
+        $linkedList->show();
     }
 }
