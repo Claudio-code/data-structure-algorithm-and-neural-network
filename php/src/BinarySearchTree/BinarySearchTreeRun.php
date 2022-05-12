@@ -16,6 +16,7 @@ class BinarySearchTreeRun
         $tree->insert(10);
         $tree->insert(14);
         $tree->insert(13);
+//        $tree->remove(1);
         $tree->preOrderShow();
     }
 }

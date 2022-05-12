@@ -8,8 +8,8 @@ use Claudiosilvajunior\Php\LinkedList\LinkedListRun;
 use Claudiosilvajunior\Php\Queue\QueueRun;
 use Claudiosilvajunior\Php\Stack\StackRun;
 
-//StackRun::run();
-//QueueRun::run();
-//DeckRun::run();
-//LinkedListRun::run();
+StackRun::run();
+QueueRun::run();
+DeckRun::run();
+LinkedListRun::run();
 BinarySearchTreeRun::run();

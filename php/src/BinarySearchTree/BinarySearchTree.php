@@ -47,46 +47,98 @@ class BinarySearchTree
                     true => $currentNode->getLeft(),
                     default => $currentNode->getRight(),
                 };
-
-            } else {
-                // 1 caso separar em metodo
-                if ($currentNode->getLeft() == null && $currentNode->getRight() == null) {
-                    if ($dadNode === null) {
-                        $this->root = null;
-                    } else {
-                        match ($dadNode->getLeft() === $currentNode) {
-                            true => $dadNode->setLeft(null),
-                            default => $dadNode->setRight(null),
-                        };
-                    }
-
-                    // 2 caso separar em metodo
-                } elseif ($currentNode->getLeft() === null && $currentNode->getRight() !== null || $currentNode->getLeft() !== null && $currentNode->getRight() === null) {
-                    if ($dadNode === null) {
-                        $this->root = match ($currentNode->getLeft() !== null) {
-                            true => $currentNode->getLeft(),
-                            default => $currentNode->getRight(),
-                        };
-                    } else {
-                        if ($currentNode->getLeft() !== null) {
-                            match ($dadNode->getLeft() && $dadNode->getLeft()->getLabel() === $currentNode->getLabel()) {
-                                true => $dadNode->setLeft($currentNode->getLeft()),
-                                default => $dadNode->setRight($currentNode->getLeft()),
-                            };
-                        } else {
-                            match ($dadNode->getLeft() && $dadNode->getLeft()->getLabel() === $currentNode->getLabel()) {
-                                true => $dadNode->setLeft($currentNode->getRight()),
-                                default => $dadNode->setRight($currentNode->getRight()),
-                            };
-                        }
-                    }
-                    // 3 caso separar em metodo
-                } elseif ($currentNode->getLeft() !== null && $currentNode->getRight() !== null) {
-
-                }
-                break;
+                continue;
             }
+            $this->removeLastNode($currentNode, $dadNode);
+            $this->removeMiddleNode($currentNode, $dadNode);
+            $this->removeNodeWithChildren($currentNode, $dadNode);
+            break;
         }
+    }
+
+    public function removeMiddleNode(Node $currentNode, ?Node $dadNode = null): void
+    {
+        if ($currentNode->getLeft() !== null && $currentNode->getRight() === null
+            || $currentNode->getLeft() === null && $currentNode->getRight() !== null) {
+            if ($dadNode === null) {
+                $this->root = match ($currentNode->getLeft() !== null) {
+                    true => $currentNode->getLeft(),
+                    default => $currentNode->getRight(),
+                };
+                return;
+            }
+            if ($currentNode->getLeft() !== null) {
+                match ($dadNode->getLeft() && $dadNode->getLeft()->getLabel() === $currentNode->getLabel()) {
+                    true => $dadNode->setLeft($currentNode->getLeft()),
+                    default => $dadNode->setRight($currentNode->getLeft()),
+                };
+                return;
+            }
+            match ($dadNode->getLeft() && $dadNode->getLeft()->getLabel() === $currentNode->getLabel()) {
+                true => $dadNode->setLeft($currentNode->getRight()),
+                default => $dadNode->setRight($currentNode->getRight()),
+            };
+        }
+    }
+
+    public function removeLastNode(Node $currentNode, ?Node $dadNode = null): void
+    {
+        if ($currentNode->getLeft() !== null && $currentNode->getRight() !== null) {
+            return;
+        }
+        if ($dadNode === null) {
+            $this->root = null;
+            return;
+        }
+        match ($dadNode->getLeft() === $currentNode) {
+            true => $dadNode->setLeft(null),
+            default => $dadNode->setRight(null),
+        };
+    }
+
+    public function removeNodeWithChildren(Node $currentNode, ?Node $dadNode = null): void
+    {
+        if ($currentNode->getLeft() === null && $currentNode->getRight() === null) {
+            return;
+        }
+        $dadSmallerNode = $currentNode;
+        $smallerNode = $currentNode->getRight();
+        $nextSmaller = $currentNode->getRight()?->getLeft();
+        while ($nextSmaller !== null) {
+            $dadSmallerNode = $smallerNode;
+            $smallerNode = $nextSmaller;
+            $nextSmaller = $smallerNode?->getLeft();
+        }
+        if ($dadNode === null) {
+            $this->removeNodeWithChildrenWithDadNodeNull($currentNode, $dadSmallerNode, $smallerNode);
+            return;
+        }
+        match ($dadNode->getLeft() && $dadNode->getLeft()->getLabel() === $currentNode->getLabel()) {
+            true => $dadNode->setLeft($smallerNode),
+            default => $dadNode->setRight($smallerNode),
+        };
+        match ($dadSmallerNode->getLeft() && $dadSmallerNode->getLeft()->getLabel() === $smallerNode->getLabel()) {
+            true => $dadSmallerNode->setLeft(null),
+            default => $dadSmallerNode->setRight(null),
+        };
+        $smallerNode->setLeft($currentNode->getLeft());
+        $smallerNode->setRight($currentNode->getRight());
+    }
+
+    public function removeNodeWithChildrenWithDadNodeNull(Node $currentNode, Node $dadSmallerNode, Node $smallerNode): void
+    {
+        if ($this->root->getRight()->getLabel() === $smallerNode->getLabel()) {
+            $smallerNode->setLeft($this->root->getLeft());
+            $this->root = $smallerNode;
+            return;
+        }
+        match ($dadSmallerNode->getLeft() && $dadSmallerNode->getLeft()->getLabel() === $smallerNode->getLabel()) {
+            true => $dadSmallerNode->setLeft(null),
+            default => $dadSmallerNode->setRight(null),
+        };
+        $smallerNode->setLeft($currentNode->getLeft());
+        $smallerNode->setRight($currentNode->getRight());
+        $this->root = $smallerNode;
     }
 
     public function preOrderShow(): void
