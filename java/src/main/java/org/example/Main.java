@@ -8,10 +8,10 @@ import org.example.stack.StackRun;
 
 public class Main {
     public static void main(String[] args) {
-//        DeckRun.run();
-//        StackRun.run();
-//        QueueRun.run();
-//        LinkedListRun.run();
+        DeckRun.run();
+        StackRun.run();
+        QueueRun.run();
+        LinkedListRun.run();
         BinarySearchTreeRun.run();
     }
 }
