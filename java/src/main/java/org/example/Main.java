@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.binarySearchTree.BinarySearchTreeRun;
 import org.example.deck.DeckRun;
 import org.example.linkedList.LinkedListRun;
 import org.example.queue.QueueRun;
@@ -11,5 +12,6 @@ public class Main {
         StackRun.run();
         QueueRun.run();
         LinkedListRun.run();
+        BinarySearchTreeRun.run();
     }
 }

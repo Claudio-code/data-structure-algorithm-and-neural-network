@@ -6,6 +6,7 @@
 - [Queue](#queue)
 - [Deck](#deck)
 - [LinkedList](#linked-list)
+- [BinaryTree](#binary-tree)
 
 
 
@@ -38,3 +39,8 @@
 - A linked list or a current list is a dynamic, linear data structure. It is composed of several cells that are interconnected through pointers, that is, each cell has a pointer that points to the memory address of the next cell.
 
 <hr>
+
+<a id="binary-tree"></a>
+## Binary tree
+
+- Is a data structure by: Or has no element. Or it has a distinct element, called the root, with two pointers to two different structures, called the left subtree and right subtree.
