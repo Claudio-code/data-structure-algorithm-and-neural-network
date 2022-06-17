@@ -19,12 +19,11 @@ class PriorityQueue:
             print('Prioridade: %s' % people.getPriority())
 
     def push(self, people):
-        if not self._push_in_front(people):
-            self._push_in_medium(people)
+        if self.empty():
+            self._push_in_front(people)
+        self._push_in_medium(people)
 
     def _push_in_front(self, people):
-        if not self.empty():
-            return False
         self.items.append(people)
         self.length += 1
         return True
