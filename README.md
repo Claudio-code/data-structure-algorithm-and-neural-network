@@ -5,9 +5,9 @@
 - [Stack](#stack)
 - [Queue](#queue)
 - [Deck](#deck)
-- [LinkedList](#linked-list)
-- [BinaryTree](#binary-tree)
-
+- [Linked List](#linked-list)
+- [Binary Tree](#binary-tree)
+- [Priority Queue](#priority-queue)
 
 
 <hr>
@@ -44,3 +44,10 @@
 ## Binary tree
 
 - Is a data structure by: Or has no element. Or it has a distinct element, called the root, with two pointers to two different structures, called the left subtree and right subtree.
+
+<hr>
+
+<a id="priority-queue"></a>
+## Priority queue
+
+- It is a queue where each element has a priority. This priority determines the position of an element in the queue, so it determines who should be removed from the queue first.
