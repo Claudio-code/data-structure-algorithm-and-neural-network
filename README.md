@@ -8,6 +8,7 @@
 - [Linked List](#linked-list)
 - [Binary Tree](#binary-tree)
 - [Priority Queue](#priority-queue)
+- [Binary Heap](#binary-heap)
 
 
 <hr>
@@ -51,3 +52,17 @@
 ## Priority queue
 
 - It is a queue where each element has a priority. This priority determines the position of an element in the queue, so it determines who should be removed from the queue first.
+
+<hr>
+
+<a id="binary-heap"></a>
+## Binary Heap
+
+- The binary Heap is binary three complete or almost.
+- Have a Min-heap e Max-heap.
+  - Min-heap:
+    - The value of each node is greater than or equal to its parent's value, the lowest value is in the root.
+  - Max-heap:
+    - The value of each node is lowest than or equal to its parent's value, the greater value is in the root.
+  - The elements are arranged in heap so that the father always has greater or equal priority than their children's priority.
+
