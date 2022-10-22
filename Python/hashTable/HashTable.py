@@ -20,8 +20,8 @@ class HashTable:
         for linked_list in self.table:
             if linked_list:
                 for key in linked_list:
-                    print('%d' % key, end='')
-                print('')
+                    print('%d' % key, end=' ')
+                print(' ')
 
     def search(self, key):
         if key in self.table[self.hash_func(key)]:

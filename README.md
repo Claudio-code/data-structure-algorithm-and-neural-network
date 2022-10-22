@@ -9,6 +9,7 @@
 - [Binary Tree](#binary-tree)
 - [Priority Queue](#priority-queue)
 - [Binary Heap](#binary-heap)
+- [Hash table](#hash-table)
 
 
 <hr>
@@ -66,3 +67,12 @@
     - The value of each node is lowest than or equal to its parent's value, the greater value is in the root.
   - The elements are arranged in heap so that the father always has greater or equal priority than their children's priority.
 
+
+<hr>
+
+<a id="hash-table"></a>
+## Hash table
+
+- Hash table is a data structure that associates lookup keys with values.
+- It is also called a scatter or disclosure table.
+- Purpose: do a quick search and get the desired value.
