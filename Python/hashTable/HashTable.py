@@ -1,5 +1,4 @@
-from msilib.schema import tables
-import re
+
 import sys
 
 class HashTable:
