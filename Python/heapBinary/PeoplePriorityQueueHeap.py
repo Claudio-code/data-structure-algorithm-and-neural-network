@@ -1,5 +1,3 @@
-from typing_extensions import Self
-
 
 class PeoplePriorityQueueHeap:
     def __init__(self, nome):
