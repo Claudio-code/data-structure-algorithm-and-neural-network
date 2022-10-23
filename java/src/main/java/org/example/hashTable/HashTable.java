@@ -2,6 +2,7 @@ package org.example.hashTable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 public class HashTable {
@@ -30,19 +31,16 @@ public class HashTable {
 
     public boolean search(int key) {
         final var tableByKey = table.get(hashFunc(key));
-        System.out.println(tableByKey.toString());
         return tableByKey.stream().anyMatch(integer -> integer == key);
     }
 
     public void show() {
-        for(List<Integer> internalList: table) {
-            if (internalList != null) {
-                for (Integer key : internalList) {
-                    System.out.print(key + " ");
-                }
-                System.out.print("\n");
-            }
-        }
+        table.stream()
+                .filter(Objects::nonNull)
+                .forEach(internalList -> {
+                    internalList.forEach(key -> System.out.print(key + " "));
+                    System.out.print("\n");
+                });
     }
 
     public List<List<Integer>> getTable() {
