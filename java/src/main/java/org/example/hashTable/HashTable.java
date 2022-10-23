@@ -26,11 +26,13 @@ public class HashTable {
     }
 
     public void insert(int key) {
-        table.get(hashFunc(key)).add(key);
+        final var hashKey = hashFunc(key);
+        table.get(hashKey).add(key);
     }
 
     public boolean search(int key) {
-        final var tableByKey = table.get(hashFunc(key));
+        final var hashKey = hashFunc(key);
+        final var tableByKey = table.get(hashKey);
         return tableByKey.stream().anyMatch(integer -> integer == key);
     }
 
