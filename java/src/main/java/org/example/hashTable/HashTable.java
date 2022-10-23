@@ -45,8 +45,4 @@ public class HashTable {
                 });
     }
 
-    public List<List<Integer>> getTable() {
-        return table;
-    }
-
 }
