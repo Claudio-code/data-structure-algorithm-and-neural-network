@@ -10,7 +10,7 @@
 - [Priority Queue](#priority-queue)
 - [Binary Heap](#binary-heap)
 - [Hash table](#hash-table)
-
+- [Dictionary](#dictionary)
 
 <hr>
 
@@ -76,3 +76,13 @@
 - Hash table is a data structure that associates lookup keys with values.
 - It is also called a scatter or disclosure table.
 - Purpose: do a quick search and get the desired value.
+
+<hr>
+
+<a id="dictionary"></a>
+## Dictionary
+
+- It is example of Hash table.
+- Hash table is representation of associates arrays.
+- each value have key associate.
+- utilize one function hash to compute one index in slots of arrays.
