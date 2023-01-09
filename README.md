@@ -15,7 +15,10 @@
   - Worst case: f(n) = n
   - Mid case: f(n) = (n + 1) / 2
   - Best case: f(n) = 1
-
+- The best case matches with small-time of execution about all possibles size inputs of **n**.
+- The worst case matches with big time of execution about all possibles size inputs of **n**.
+- The mid-case matches with average time of execution about all possibles size inputs of **n**.
+  - It is one distribution of probabilistic about size of set **n**.
 
 <hr>
 
