@@ -12,6 +12,9 @@
 - Mathematically speaking, the asymptotic analysis is method to describe behavior of the limits.
 - It is desirable to express time consumption of algorithm without depending on language.
 - Example, in sequential search, the number of times the query key is compared with the key of each record.
+  - Worst case: f(n) = n
+  - Mid case: f(n) = (n + 1) / 2
+  - Best case: f(n) = 1
 
 
 <hr>
