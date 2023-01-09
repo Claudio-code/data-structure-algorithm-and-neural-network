@@ -2,6 +2,20 @@
   :blue_heart: Data struture, algorithm :blue_heart:
 </h3>
 
+<hr>
+
+# Asymptotic analysis
+
+- The analysis small values has ignored and focus in big values of **n**.
+  - f(n) = n + 10
+- Small values of **n**, any algorithm cost little to be executed, even the inefficient algorithms.
+- Mathematically speaking, the asymptotic analysis is method to describe behavior of the limits.
+- It is desirable to express time consumption of algorithm without depending on language.
+- Example, in sequential search, the number of times the query key is compared with the key of each record.
+
+
+<hr>
+
 - [Stack](#stack)
 - [Queue](#queue)
 - [Deck](#deck)
