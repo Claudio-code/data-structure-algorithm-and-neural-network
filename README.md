@@ -31,6 +31,7 @@
 - [Binary Heap](#binary-heap)
 - [Hash table](#hash-table)
 - [Dictionary](#dictionary)
+- [Fork](#fork)
 
 <hr>
 
@@ -106,3 +107,19 @@
 - Hash table is representation of associates arrays.
 - each value have key associate.
 - utilize one function hash to compute one index in slots of arrays.
+
+<hr>
+
+<a id="fork"></a>
+## Fork
+
+- Fork is entity composted two parts:
+  - vertices (nodes)
+  - edges (rows)
+- The nodes are the little balls (entities you want to model).
+- Edges are the the relations of theses entities.
+
+### Adjacency Matrix
+
+- The first form represent one fork  
+
