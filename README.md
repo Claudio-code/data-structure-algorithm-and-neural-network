@@ -121,5 +121,18 @@
 
 ### Adjacency Matrix
 
-- The first form represent one fork  
+- The first form represent one fork called adjacency Matrix.
+- It is math structure organized in table form with lines and column.
+- Adjacency: close, proximity.
 
+<br>
+
+#### Example
+<br>
+
+<img align="center" width="50%" height="50%" src="images/Adjacency_Matrix.png">
+
+<br>
+
+- The row ***A*** and column ***E*** has filled with 0 indicating that there is not connection between ***A*** and ***E***.
+- The row ***C*** and column ***A*** has filled with 1 indicating that there is connection between ***C*** and ***A***.
