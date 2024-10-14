@@ -9,13 +9,13 @@ class HashTable:
             sys.exit(1)
         self.table_size = table_size
         self.table = [[] for i in range(table_size)]
-    
+
     def hash_func(self, key):
         return key % self.table_size
 
     def insert(self, key):
         self.table[self.hash_func(key)].append(key)
-    
+
     def show(self):
         for linked_list in self.table:
             if linked_list:
